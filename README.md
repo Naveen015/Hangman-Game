@@ -7,12 +7,12 @@ The intuition was to learn the patterns of letters occurring together. The patte
 ## Approach
 Take a letter and iterate it throughout the masked word to calculate the probability of that letter occurring in each index. Add the probabilities over all the indices of the mask. Calculate these probabilities for all the available letters. Then finally take the character which has the maximum probability. 
 N-gram model stores all the patterns of letters occurring together along with its count. A bigram model learns the patterns of size two, trigram learns patterns of size three and respectively for others. We use these counts to calculate the probability as shown below.  
-
-$P (X=x|L_1^(n-1)) = C (L_1^(n-1)x) / C (L_1^(n-1))$      
-Where:  $L_1^(n-1)x$ = Pattern obtained with n-1 neighboring letters with ‘x’ at masked space      
-	$L_1^(n-1)$  = All patterns obtained with n-1 neighboring letters (i.e., any letter at masked space)      
-	C ( )   = Count function     
-	
+```math
+ P (X=x|L_1^{n-1}) = C (L_1^(n-1)x) / C (L_1^(n-1))     
+ Where: L_1^(n-1)x = Pattern obtained with n-1 neighboring letters with ‘x’ at masked space      
+	L_1^(n-1)  = All patterns obtained with n-1 neighboring letters (i.e., any letter at masked space)      
+	C ( )      = Count function   
+```
 Initially we start guessing with unigram model as there won’t be any neighboring characters revealed beforehand. Then we proceed on to bigram model then trigram and further on. After some guesses, most of the letters will be revealed and we can use a bigger N-gram model to predict the remaining letters. 
 
 ## Observations
