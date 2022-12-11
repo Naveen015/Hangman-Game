@@ -9,9 +9,9 @@ Take a letter and iterate it throughout the masked word to calculate the probabi
 N-gram model stores all the patterns of letters occurring together along with its count. A bigram model learns the patterns of size two, trigram learns patterns of size three and respectively for others. We use these counts to calculate the probability as shown below.  
 
 ```text
-P (X=x|L1n-1) = C (L1n-1x) / C (L1n-1)      
-Where:  L1n-1x = Pattern obtained with n-1 neighboring letters with ‘x’ at masked space      
-	 L1n-1    = All patterns obtained with n-1 neighboring letters (i.e., any letter at masked space)      
+$P (X=x|L_1^(n-1)) = C (L_1^(n-1)x) / C (L_1^(n-1))$      
+Where:  $L_1^(n-1)x$ = Pattern obtained with n-1 neighboring letters with ‘x’ at masked space      
+	$L_1^(n-1)$  = All patterns obtained with n-1 neighboring letters (i.e., any letter at masked space)      
 	C ( )   = Count function     
 ```
 	
